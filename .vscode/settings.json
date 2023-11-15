@@ -1,0 +1,12 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.gitignore": true,
+    "astro.config.mjs": true,
+    "package-lock.json": true,
+    "tsconfig.json": true,
+    "**/.DS_Store": true,
+    "**/node_modules": true,
+    "特定のファイルやディレクトリ": true
+  }
+}
