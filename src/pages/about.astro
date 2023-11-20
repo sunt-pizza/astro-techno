@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css';
+
 const pageTitle = "私について";
 
 const identity = {
@@ -9,6 +11,8 @@ const identity = {
 };
 
 const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "ドキュメントの執筆"];
+
+const age = ["30"];
 
 const happy = true;
 const finished = false;
@@ -62,5 +66,7 @@ const skillTransform = "uppercase";
     {happy && <p>I am happy to be learning Astro! Astroを学べて幸せです！</p>}
     {finished && <p>I finished this tutorial! このチュートリアルを終えました！</p>}
     {goal === 3 ? <p>My goal is to finish in 3 days. 3日で終えるのが目標です。</p> : <p>My goal is not 3 days. 3日が目標ではありません。</p>}
+
+    {age <= 30 ? <p>節目だね</p> : <p>節目じゃないね</p>}
   </body>
 </html>
