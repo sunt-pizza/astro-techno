@@ -23,8 +23,12 @@ const goal = 3;
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
 
-		<style>
-		</style>
+    <style>
+      h1 {
+        color: purple;
+        font-size: 4rem;
+      }
+    </style>
 
 	</head>
 	<body>
@@ -32,13 +36,14 @@ const goal = 3;
     <a href="/about/">概要</a>
     <a href="/blog/">ブログ</a>
 
+    <h1>{pageTitle}</h1>
     <p>以下は私に関するいくつかの事実です。</p>
 		<ul>
 		  <li>私の名前は{identity.firstName}です。</li>
 		  <li>{identity.country}に住んでおり、{identity.occupation}として働いています。</li>
 		  {identity.hobbies.length >= 2 &&
 		    <li>私の2つの趣味は{identity.hobbies[0]}と{identity.hobbies[1]}です。</li>
-		  }
+		  } <!-- hobbiesが２以下であれば右側の式を処理する -->
 		</ul>
 		<p>私のスキルは以下の通りです。</p>
 		<ul>
