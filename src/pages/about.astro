@@ -1,7 +1,6 @@
 ---
 import '../styles/global.css';
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
 const pageTitle = "私について";
 
@@ -25,32 +24,7 @@ const skillWeight = "bold";
 const skillTransform = "uppercase";
 ---
 
-<html lang="ja">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-
-    <style define:vars={{skillColor, skillWeight, skillTransform}}>
-      h1 {
-        color: purple;
-        font-size: 4rem;
-      }
-      .skill {
-        color: green;
-        color: var(--skillColor);
-        font-weight: var(--skillWeight);
-        text-transform: var(--skillTransform);
-      }
-    </style>
-
-	</head>
-	<body>
-    <Navigation /><!-- 最後のスラッシュがないと続きを読み込まなくなるので注意 -->
-
-    <h1>{pageTitle}</h1>
+<BaseLayout pageTitle={pageTitle}>
     <p>以下は私に関するいくつかの事実です。</p>
 		<ul>
 		  <li>私の名前は{identity.firstName}です。</li>
@@ -68,6 +42,6 @@ const skillTransform = "uppercase";
     {goal === 3 ? <p>My goal is to finish in 3 days. 3日で終えるのが目標です。</p> : <p>My goal is not 3 days. 3日が目標ではありません。</p>}
 
     {age === 30 ? <p>節目だね</p> : <p>節目じゃないね</p>}
-    <Footer />
+</BaseLayout>
   </body>
 </html>
